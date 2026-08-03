@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#153b45">
-<title>北海道五日旅行指南｜11/29–12/3</title>
+<title>北海道五日旅行指南 V4｜11/29–12/3</title>
 <style>
 :root {
   --ink:#172a30; --muted:#65757b; --paper:#f6f3ec; --white:#fff;
@@ -62,10 +62,33 @@ transition:.2s;display:block} .food-card:hover{transform:translateY(-3px);box-sh
 input{width:20px;height:20px;accent-color:var(--navy);margin-top:5px}
 .credits{font-size:13px;color:var(--muted);background:white;border:1px solid var(--line);padding:19px;border-radius:18px}
 footer{padding:34px 0 75px;color:var(--muted);text-align:center}
+
+.quick-read{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+.quick-item{background:var(--navy);color:white;border-radius:22px;padding:20px}
+.quick-item span{display:block;font-size:13px;opacity:.75;font-weight:800;letter-spacing:.08em}
+.quick-item b{display:block;font-size:22px;line-height:1.35;margin-top:6px}
+.day-focus{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:15px 0}
+.focus-box{border-radius:16px;padding:13px 14px;background:#f4f7f6}
+.focus-box.tip{background:#fff3dd}
+.focus-label{display:block;font-size:12px;letter-spacing:.08em;font-weight:900;color:var(--gold);margin-bottom:4px}
+.focus-box b{font-size:16px}
+.rating-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:18px 0}
+.rating-item{background:var(--ice);border-radius:15px;padding:12px}
+.rating-item span{display:block;font-size:13px;color:var(--muted)}
+.rating-item b{display:block;font-size:17px;color:var(--navy);letter-spacing:.04em}
+.souvenir-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.souvenir{background:white;border:1px solid var(--line);border-radius:22px;padding:20px}
+.souvenir-icon{font-size:32px;line-height:1}
+.souvenir h3{font-size:20px;margin:8px 0 4px}
+.souvenir p{font-size:15px;color:var(--muted);margin:6px 0}
+.souvenir .buy{display:inline-block;margin-top:8px;padding:5px 9px;background:var(--ice);border-radius:999px;font-size:12px;font-weight:850;color:var(--navy)}
+.priority{display:inline-flex;align-items:center;gap:5px;margin-top:5px;color:var(--gold);font-size:13px;font-weight:900}
+.compact-note{font-size:14px;color:var(--muted);margin-top:14px}
+
 @media(max-width:820px){
-  section{padding:52px 0} .summary-grid,.food-grid,.tip-grid{grid-template-columns:1fr}.weather-strip{grid-template-columns:1fr 1fr 1fr}
+  section{padding:52px 0} .summary-grid,.food-grid,.tip-grid,.quick-read,.souvenir-grid{grid-template-columns:1fr}.weather-strip{grid-template-columns:1fr 1fr 1fr}
   .photo-grid{grid-template-columns:1fr;grid-template-rows:360px 250px 250px}
-  .photo:first-child{grid-row:auto} .hotel{grid-template-columns:1fr} .hotel-photo{min-height:360px}
+  .photo:first-child{grid-row:auto}.day-focus,.rating-grid{grid-template-columns:1fr} .hotel{grid-template-columns:1fr} .hotel-photo{min-height:360px}
   .day{grid-template-columns:1fr} .day-no{text-align:left;padding:11px 18px} .day-no small,.day-no strong{display:inline;font-size:17px}
 }
 </style>
@@ -90,7 +113,7 @@ footer{padding:34px 0 75px;color:var(--muted);text-align:center}
 
 <nav><div class="container nav-inner">
 <a href="#overview">行程特色</a><a href="#photos">景點預覽</a><a href="#days">每日行程</a>
-<a href="#hotel">住宿</a><a href="#food">美食名店</a><a href="#tips">行前提醒</a>
+<a href="#hotel">住宿</a><a href="#food">美食名店</a><a href="#souvenirs">必買伴手禮</a><a href="#tips">行前提醒</a>
 </div></nav>
 
 <main>
@@ -101,6 +124,11 @@ footer{padding:34px 0 75px;color:var(--muted);text-align:center}
     <div class="summary"><b>2＋2 晚</b><span>登別與札幌各連住兩晚，減少每天收行李的疲累。</span></div>
     <div class="summary"><b>5 天</b><span>自然景觀、溫泉、購物與自由用餐都兼顧。</span></div>
     <div class="summary"><b>初冬</b><span>11 月底可能遇到降雪或積雪，但雪況仍以當年天氣為準。</span></div>
+  </div>
+  <div class="quick-read">
+    <div class="quick-item"><span>最舒服的安排</span><b>登別 2 晚＋札幌 2 晚，不必天天搬行李</b></div>
+    <div class="quick-item"><span>最精彩的一天</span><b>DAY 2：地獄谷、企鵝、洞爺湖與昭和新山</b></div>
+    <div class="quick-item"><span>最自由的一天</span><b>DAY 4：小樽慢遊，自由安排午餐與甜點</b></div>
   </div>
 </div></section>
 
@@ -118,23 +146,23 @@ footer{padding:34px 0 75px;color:var(--muted);text-align:center}
 <div class="timeline">
 <div class="day"><div class="day-no"><small>DAY</small><strong>1</strong></div><div class="day-body">
 <h3>桃園 ✈ 新千歲 → 登別溫泉</h3><div class="route-line"><span class="route-stop">桃園</span><span class="route-arrow">→</span><span class="route-stop">新千歲</span><span class="route-arrow">→</span><span class="route-stop">登別</span></div><div class="tags"><span class="tag">溫泉街</span><span class="tag">閻魔王變臉秀</span><span class="tag">螃蟹自助餐</span></div>
-<p>抵達後前往登別，入住飯店後以晚餐、泡湯與溫泉街散步為主。第一天沒有再塞大量景點，體力負擔較低。</p>
+<p>抵達後前往登別，入住飯店後以晚餐、泡湯與溫泉街散步為主。第一天沒有再塞大量景點，體力負擔較低。</p><div class="day-focus"><div class="focus-box"><span class="focus-label">今天最值得期待</span><b>第一晚就能泡登別溫泉，吃飯後不必再趕行程</b></div><div class="focus-box tip"><span class="focus-label">小提醒</span><b>先確認晚餐與大浴場時間，再決定是否逛溫泉街</b></div></div>
 <div class="meal">晚餐：飯店自助餐＋螃蟹吃到飽｜住宿：Hotel Mahoroba</div></div></div>
 <div class="day"><div class="day-no"><small>DAY</small><strong>2</strong></div><div class="day-body">
 <h3>地獄谷 → 尼克斯海洋公園 → 羊蹄山名水 → 洞爺湖 → 昭和新山</h3><div class="route-line"><span class="route-stop">地獄谷</span><span class="route-arrow">→</span><span class="route-stop">海洋公園</span><span class="route-arrow">→</span><span class="route-stop">羊蹄山</span><span class="route-arrow">→</span><span class="route-stop">洞爺湖</span><span class="route-arrow">→</span><span class="route-stop">昭和新山</span></div><div class="tags"><span class="tag">企鵝遊行</span><span class="tag">火山景觀</span><span class="tag">湖景</span></div>
-<p>景點最豐富的一天。地獄谷看火山地形，海洋公園看企鵝，下午轉往羊蹄山、洞爺湖與昭和新山。</p>
+<p>景點最豐富的一天。地獄谷看火山地形，海洋公園看企鵝，下午轉往羊蹄山、洞爺湖與昭和新山。</p><div class="day-focus"><div class="focus-box"><span class="focus-label">今天最值得期待</span><b>企鵝遊行與洞爺湖，是全程最有北海道感的一天</b></div><div class="focus-box tip"><span class="focus-label">小提醒</span><b>這天走動和上下車較多，防滑鞋、手套要放隨身包</b></div></div>
 <div class="meal">午餐：日式壽喜燒吃到飽（餐標 ¥2,500）｜晚餐：飯店自助餐＋螃蟹吃到飽｜住宿：Hotel Mahoroba</div></div></div>
 <div class="day"><div class="day-no"><small>DAY</small><strong>3</strong></div><div class="day-body">
 <h3>支笏湖 → 北海道神宮 → 免稅店 → 大通公園 → 狸小路</h3><div class="route-line"><span class="route-stop">支笏湖</span><span class="route-arrow">→</span><span class="route-stop">北海道神宮</span><span class="route-arrow">→</span><span class="route-stop">大通公園</span><span class="route-arrow">→</span><span class="route-stop">狸小路</span></div><div class="tags"><span class="tag">札幌市區</span><span class="tag">自由晚餐</span></div>
-<p>從湖區進入札幌。晚餐自理，可依體力選擇湯咖哩、拉麵、迴轉壽司或成吉思汗烤羊肉。</p>
+<p>從湖區進入札幌。晚餐自理，可依體力選擇湯咖哩、拉麵、迴轉壽司或成吉思汗烤羊肉。</p><div class="day-focus"><div class="focus-box"><span class="focus-label">今天最值得期待</span><b>開始進入札幌市區，晚上可以自行選擇想吃的料理</b></div><div class="focus-box tip"><span class="focus-label">小提醒</span><b>熱門店可能排隊，同行者最好先決定第一與第二選擇</b></div></div>
 <div class="meal">午餐：日式套餐（餐標 ¥2,000）｜晚餐：自理｜住宿：QUINTESSA、KOKO 或同級</div></div></div>
 <div class="day"><div class="day-no"><small>DAY</small><strong>4</strong></div><div class="day-body">
 <h3>小樽市區慢遊 → 晚上回札幌</h3><div class="route-line"><span class="route-stop">小樽運河</span><span class="route-arrow">→</span><span class="route-stop">堺町通</span><span class="route-arrow">→</span><span class="route-stop">音樂盒堂</span><span class="route-arrow">→</span><span class="route-stop">札幌</span></div><div class="tags"><span class="tag">小樽運河</span><span class="tag">北一硝子</span><span class="tag">音樂盒堂</span><span class="tag">自由午晚餐</span></div>
-<p>行程表主要安排小樽，適合慢慢逛堺町通、甜點店與運河周邊。實際是否停留至傍晚，要以領隊公布時間為準。</p>
+<p>行程表主要安排小樽，適合慢慢逛堺町通、甜點店與運河周邊。實際是否停留至傍晚，要以領隊公布時間為準。</p><div class="day-focus"><div class="focus-box"><span class="focus-label">今天最值得期待</span><b>小樽運河、甜點與玻璃工藝，是最適合慢慢拍照的一天</b></div><div class="focus-box tip"><span class="focus-label">小提醒</span><b>先記清楚集合地點與時間，再安排壽司、咖啡廳或甜點</b></div></div>
 <div class="meal">午餐、晚餐：自理｜住宿：札幌連住第 2 晚</div></div></div>
 <div class="day"><div class="day-no"><small>DAY</small><strong>5</strong></div><div class="day-body">
 <h3>北廣島三井 Outlet → 新千歲機場 ✈ 桃園</h3><div class="route-line"><span class="route-stop">Outlet</span><span class="route-arrow">→</span><span class="route-stop">新千歲</span><span class="route-arrow">→</span><span class="route-stop">桃園</span></div><div class="tags"><span class="tag">最後採買</span><span class="tag">返台</span></div>
-<p>上午安排 Outlet，之後前往機場。購物時要留意集合時間及行李重量。</p>
+<p>上午安排 Outlet，之後前往機場。購物時要留意集合時間及行李重量。</p><div class="day-focus"><div class="focus-box"><span class="focus-label">今天最值得期待</span><b>最後一次集中採買，適合補齊服飾與伴手禮</b></div><div class="focus-box tip"><span class="focus-label">小提醒</span><b>先算行李重量；冷藏甜點與巧克力最好接近回程再買</b></div></div>
 <div class="meal">午餐：自理｜晚餐：機上餐</div></div></div>
 </div></div></section>
 
@@ -151,6 +179,15 @@ footer{padding:34px 0 75px;color:var(--muted);text-align:center}
     <li>兩晚晚餐都在飯店內，天冷時不需外出找餐廳。</li>
     <li>大型飯店接待團體經驗成熟，對第一次跟團較省心。</li>
   </ul>
+  <div class="rating-grid">
+    <div class="rating-item"><span>溫泉體驗</span><b>★★★★★</b></div>
+    <div class="rating-item"><span>位置便利</span><b>★★★★☆</b></div>
+    <div class="rating-item"><span>飯店餐食</span><b>★★★★☆</b></div>
+    <div class="rating-item"><span>房間新穎度</span><b>★★★☆☆</b></div>
+    <div class="rating-item"><span>長輩友善</span><b>★★★★☆</b></div>
+    <div class="rating-item"><span>連住安排</span><b>★★★★★</b></div>
+  </div>
+  <p class="compact-note">以上是從這趟行程的實用性評估，不是官方星級。</p>
   <div class="notice"><b>合理期待：</b>公共溫泉與自助餐是亮點；房間設計可能較傳統，用餐尖峰也可能較熱鬧。螃蟹種類不能指定，以飯店當天供應為準。</div>
 </div></div>
 </div></section>
@@ -272,6 +309,21 @@ footer{padding:34px 0 75px;color:var(--muted);text-align:center}
 </a></div><div class="notice" style="margin-top:18px"><b>團餐評價限制：</b>旅行社目前沒有公布 Day 2 壽喜燒與 Day 3 日式套餐的餐廳名稱，因此無法可靠列出這兩間餐廳的個別評價。拿到行前說明會資料後再查會最準。</div>
 </div></section>
 
+
+<section id="souvenirs"><div class="container">
+<div class="head"><div class="eyebrow">SOUVENIRS</div><h2>北海道必買伴手禮</h2>
+<p class="lead">不用每樣都買。下面依「好帶、代表性、長輩接受度」整理，最後一天或機場再補買最省事。</p></div>
+<div class="souvenir-grid">
+  <article class="souvenir"><div class="souvenir-icon">🧀</div><h3>LeTAO</h3><div class="priority">★★★★★ 小樽代表</div><p>雙層起司蛋糕最有名，但需要冷藏；常溫餅乾比較容易帶回台灣。</p><span class="buy">建議：DAY 4 小樽</span></article>
+  <article class="souvenir"><div class="souvenir-icon">🍪</div><h3>白色戀人</h3><div class="priority">★★★★★ 最穩選擇</div><p>辨識度高、常溫好攜帶，適合送親友或同事，不太容易踩雷。</p><span class="buy">建議：Outlet／機場</span></article>
+  <article class="souvenir"><div class="souvenir-icon">🍫</div><h3>ROYCE'</h3><div class="priority">★★★★★ 巧克力</div><p>生巧克力需冷藏，洋芋片巧克力也很熱門；回程前再買較安心。</p><span class="buy">建議：新千歲機場</span></article>
+  <article class="souvenir"><div class="souvenir-icon">🌸</div><h3>六花亭</h3><div class="priority">★★★★☆ 北海道經典</div><p>奶油葡萄夾心餅乾最具代表性，口感偏甜，適合搭咖啡或茶。</p><span class="buy">建議：札幌／機場</span></article>
+  <article class="souvenir"><div class="souvenir-icon">🍰</div><h3>北菓樓</h3><div class="priority">★★★★☆ 甜點類</div><p>年輪蛋糕、泡芙與米果都有人氣；年輪蛋糕較適合帶回家分享。</p><span class="buy">建議：小樽／札幌</span></article>
+  <article class="souvenir"><div class="souvenir-icon">🥔</div><h3>薯條三兄弟</h3><div class="priority">★★★★☆ 好攜帶</div><p>鹹香、獨立包裝，適合多人分送；熱門時可能限購或缺貨。</p><span class="buy">建議：機場最後補買</span></article>
+</div>
+<div class="notice"><b>冷藏品提醒：</b>LeTAO 起司蛋糕、ROYCE' 生巧克力等需要留意保冷與航空托運時間。旅行社或店家若提供保冷袋，可依回程時間評估再購買。</div>
+</div></section>
+
 <section id="tips"><div class="container">
 <div class="head"><div class="eyebrow">BEFORE YOU GO</div><h2>行前提醒</h2></div>
 <div class="tip-grid">
@@ -290,6 +342,7 @@ footer{padding:34px 0 75px;color:var(--muted);text-align:center}
 <b>照片來源與授權：</b>小樽運河（Komatta，CC BY-SA 3.0）、登別地獄谷（663highland，CC 授權）、冬季洞爺湖（洞爺湖町，CC BY 4.0）、北海道神宮（t-konno，CC BY-SA 3.0）。照片用於介紹景點氛圍，實際雪況會因日期與天氣不同。
 </div>
 </div></section>
+<section><div class="container"><div class="notice"><b>整體結論：</b>這團最大的優點不是塞最多景點，而是住宿連住、第一天較輕鬆、小樽保留自由時間。對第一次去北海道、希望行程舒服的旅客來說，安排相當均衡。</div></div></section>
 </main>
-<footer><div class="container">北海道五日旅行指南｜內容依雄獅產品 26JHN29JXB-T 整理</div></footer>
+<footer><div class="container">北海道五日旅行指南 V4｜內容依雄獅產品 26JHN29JXB-T 整理</div></footer>
 </body></html>
