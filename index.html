@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#153b45">
-<title>北海道五日旅行指南 V4｜11/29–12/3</title>
+<title>北海道五日旅行指南 V5｜11/29–12/3</title>
 <style>
 :root {
   --ink:#172a30; --muted:#65757b; --paper:#f6f3ec; --white:#fff;
@@ -85,6 +85,45 @@ footer{padding:34px 0 75px;color:var(--muted);text-align:center}
 .priority{display:inline-flex;align-items:center;gap:5px;margin-top:5px;color:var(--gold);font-size:13px;font-weight:900}
 .compact-note{font-size:14px;color:var(--muted);margin-top:14px}
 
+
+.media-card{overflow:hidden;background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:0 8px 28px rgba(20,49,57,.07)}
+.media-img{height:220px;background:#e9efee;overflow:hidden}
+.media-img img{width:100%;height:100%;object-fit:cover}
+.media-img.contain img{object-fit:contain;padding:12px;background:#fff}
+.media-body{padding:20px}
+.media-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.place-badge{font-size:17px;font-weight:900;color:var(--gold)}
+.day-badge{display:inline-block;margin-top:8px;padding:6px 10px;border-radius:999px;background:#edf2ff;color:#36507a;font-size:13px;font-weight:900}
+.media-card h3{font-size:23px;line-height:1.3;margin:10px 0 5px}
+.media-card p{margin:7px 0;color:var(--muted)}
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0}
+.info-grid div{background:var(--ice);border-radius:14px;padding:10px;text-align:center}
+.info-grid b{display:block;color:var(--navy);font-size:15px;line-height:1.3}
+.info-grid span{display:block;color:var(--muted);font-size:11px;margin-top:3px}
+.reason{padding:12px 14px;border-radius:14px;background:#eef7f4;color:#245249;margin:12px 0;font-weight:750}
+.backup{padding:12px 14px;border-radius:14px;background:#fff3dd;color:#72541e;margin:12px 0}
+.status-open{display:inline-block;font-size:13px;font-weight:900;color:#287a5c;background:#e8f6ef;padding:5px 9px;border-radius:999px}
+.walk-route{display:flex;flex-wrap:wrap;gap:7px;align-items:center;padding:15px;border-radius:18px;background:#f2f6f5;margin:16px 0}
+.walk-route span{font-size:13px;font-weight:850;padding:6px 10px;border-radius:999px;background:#fff;border:1px solid var(--line)}
+.walk-route i{font-style:normal;color:var(--gold);font-weight:900}
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.product-card{overflow:hidden;background:#fff;border:1px solid var(--line);border-radius:24px}
+.product-photo{height:210px;background:#fff;overflow:hidden}
+.product-photo img{width:100%;height:100%;object-fit:contain;padding:10px}
+.product-body{padding:18px}
+.product-card h3{font-size:21px;margin:4px 0}
+.product-label{font-size:12px;font-weight:900;color:var(--gold);letter-spacing:.08em}
+.product-meta{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.product-meta span{font-size:12px;font-weight:850;padding:5px 8px;border-radius:999px;background:var(--ice);color:var(--navy)}
+.product-tip{font-size:14px;color:var(--muted);margin:8px 0}
+.recognition{padding:10px 12px;border-radius:12px;background:#eef7f4;font-weight:800;color:#285448}
+.source-note{font-size:12px;color:var(--muted);margin-top:16px}
+@media(max-width:820px){
+  .product-grid{grid-template-columns:1fr}
+  .media-img{height:245px}
+  .info-grid{grid-template-columns:1fr 1fr 1fr}
+}
+
 @media(max-width:820px){
   section{padding:52px 0} .summary-grid,.food-grid,.tip-grid,.quick-read,.souvenir-grid{grid-template-columns:1fr}.weather-strip{grid-template-columns:1fr 1fr 1fr}
   .photo-grid{grid-template-columns:1fr;grid-template-rows:360px 250px 250px}
@@ -113,7 +152,7 @@ footer{padding:34px 0 75px;color:var(--muted);text-align:center}
 
 <nav><div class="container nav-inner">
 <a href="#overview">行程特色</a><a href="#photos">景點預覽</a><a href="#days">每日行程</a>
-<a href="#hotel">住宿</a><a href="#food">美食名店</a><a href="#souvenirs">必買伴手禮</a><a href="#tips">行前提醒</a>
+<a href="#hotel">住宿</a><a href="#food">順路美食</a><a href="#souvenirs">伴手禮圖鑑</a><a href="#tips">行前提醒</a>
 </div></nav>
 
 <main>
@@ -192,136 +231,224 @@ footer{padding:34px 0 75px;color:var(--muted);text-align:center}
 </div></div>
 </div></section>
 
+
 <section id="food"><div class="container">
-<div class="head"><div class="eyebrow">FOOD GUIDE</div><h2>自由活動可以吃什麼？</h2>
-<p class="lead">下面整理札幌與小樽較有代表性的選擇，並標示適合哪一天、價格帶與排隊程度。這些不是旅行社已預約的餐廳；離線時仍可閱讀，連上網路後才可開啟地圖。</p></div>
+<div class="head"><div class="eyebrow">NEARBY FOOD</div><h2>順路、少走路的自由用餐</h2>
+<p class="lead">以下只保留符合當天行程區域、長輩較容易抵達的選擇。實際集合點可能改變，出發前仍要先問領隊「從集合點走過去大約多久」。</p></div>
+
+<div class="notice"><b>日期與營業檢查：</b>札幌自由晚餐是 2026/12/1（星期二）；小樽自由活動是 2026/12/2（星期三）。下列店家依目前官方營業資料，這兩天原則上都有營業，但臨時休業、提早售完與團體集合時間仍可能改變。</div>
+
+<h3 style="font-size:28px;margin-top:34px">DAY 3｜札幌晚餐</h3>
+<div class="walk-route"><span>狸小路／大通</span><i>→</i><span>薄野周邊</span><i>或</i><span>札幌站地下街</span></div>
+
 <div class="food-grid">
-<a class="food-card" href="https://www.google.com/maps/search/?api=1&query=Soup+Curry+GARAKU+Sapporo" target="_blank" rel="noopener">
-  <div class="food-top"><span class="city">📍 札幌</span><span class="arrow">↗</span></div>
-  <span class="eat-day">DAY 3 晚餐</span>
-  <h3>GARAKU 湯咖哩</h3>
-  <p class="order"><b>推薦：</b>雞腿蔬菜湯咖哩</p>
-  <div class="food-meta">
-    <div><b>¥1,500–2,200</b><span>大約價格</span></div>
-    <div><b>30–60 分</b><span>熱門時段</span></div>
-    <div><b>★★★★★</b><span>推薦程度</span></div>
+<article class="media-card">
+  <div class="media-img contain"><img src="https://s-garaku.com/cms_image.php?path=1%2F14%2Fmenu_1780640908_c4357e2c.webp" alt="GARAKU 雞腿蔬菜湯咖哩"></div>
+  <div class="media-body">
+    <div class="media-top"><span class="place-badge">📍 GARAKU 札幌本店</span><span class="status-open">週二可安排</span></div>
+    <span class="day-badge">DAY 3 晚餐｜狸小路東側</span>
+    <h3>第一推薦：雞腿蔬菜湯咖哩</h3>
+    <div class="info-grid">
+      <div><b>約 ¥1,480 起</b><span>餐點價格</span></div>
+      <div><b>約 8–12 分</b><span>狸小路步行</span></div>
+      <div><b>30–60 分</b><span>熱門時等候</span></div>
+    </div>
+    <div class="reason">推薦原因：北海道代表料理，雞腿軟、蔬菜多，辣度可以選低，長輩接受度高。</div>
+    <div class="backup"><b>備案：</b>若現場預估要等超過 40 分鐘，就不要硬排，改去札幌站附近的 Suage4。</div>
+    <a class="map" href="https://www.google.com/maps/search/?api=1&query=Soup+Curry+GARAKU+Sapporo+Main" target="_blank">開啟 Google 地圖 ↗</a>
   </div>
-  <p>香料感明顯、配料多，是第一次吃北海道湯咖哩很穩的選擇。</p>
-  <span class="map">開啟地圖搜尋</span>
-</a>
+</article>
 
-<a class="food-card" href="https://www.google.com/maps/search/?api=1&query=Nemuro+Hanamaru+Sapporo" target="_blank" rel="noopener">
-  <div class="food-top"><span class="city">📍 札幌</span><span class="arrow">↗</span></div>
-  <span class="eat-day">DAY 3 晚餐</span>
-  <h3>根室花まる</h3>
-  <p class="order"><b>推薦：</b>北海道產握壽司、花咲蟹相關品項</p>
-  <div class="food-meta">
-    <div><b>¥2,000–3,500</b><span>大約價格</span></div>
-    <div><b>30–90 分</b><span>熱門時段</span></div>
-    <div><b>★★★★★</b><span>推薦程度</span></div>
+<article class="media-card">
+  <div class="media-img" style="background:linear-gradient(145deg,#ebd7a7,#7d4e2f);display:grid;place-items:center;font-size:92px">🍛</div>
+  <div class="media-body">
+    <div class="media-top"><span class="place-badge">📍 Soup Curry Suage4</span><span class="status-open">每日 11:00–21:00</span></div>
+    <span class="day-badge">DAY 3 備案｜札幌站南口</span>
+    <h3>最好找、走路較省力的湯咖哩</h3>
+    <div class="info-grid">
+      <div><b>約 ¥1,600–2,300</b><span>餐點價格</span></div>
+      <div><b>札幌站約 5 分</b><span>地下通道可到</span></div>
+      <div><b>20–45 分</b><span>熱門時等候</span></div>
+    </div>
+    <div class="reason">推薦原因：位於 miredo 2 樓，札幌站南口步行約 5 分鐘，也能利用地下通道，冬天比較不辛苦。</div>
+    <div class="backup"><b>備案：</b>如果飯店在薄野、領隊沒有帶到札幌站附近，就不要特地搭車來，直接選狸小路周邊餐廳。</div>
+    <a class="map" href="https://www.google.com/maps/search/?api=1&query=Soup+Curry+Suage4+Sapporo" target="_blank">開啟 Google 地圖 ↗</a>
   </div>
-  <p>人氣高、魚料選擇多；若爸媽不想久等，可先問領隊有沒有較近或較少人的分店。</p>
-  <span class="map">開啟地圖搜尋</span>
-</a>
+</article>
 
-<a class="food-card" href="https://www.google.com/maps/search/?api=1&query=Daruma+Jingisukan+Sapporo" target="_blank" rel="noopener">
-  <div class="food-top"><span class="city">📍 札幌</span><span class="arrow">↗</span></div>
-  <span class="eat-day">DAY 3 晚餐</span>
-  <h3>成吉思汗 だるま</h3>
-  <p class="order"><b>推薦：</b>烤羊肉、洋蔥</p>
-  <div class="food-meta">
-    <div><b>¥2,500–4,000</b><span>大約價格</span></div>
-    <div><b>30–60 分</b><span>熱門時段</span></div>
-    <div><b>★★★★☆</b><span>推薦程度</span></div>
+<article class="media-card">
+  <div class="media-img"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Sushi%20Nemuro%20Hanamaru%20Tokei%20Dai%20%28184517513%29.jpeg" alt="根室花丸壽司"></div>
+  <div class="media-body">
+    <div class="media-top"><span class="place-badge">📍 根室花まる STELLAR PLACE</span><span class="status-open">每日營業</span></div>
+    <span class="day-badge">DAY 3｜札幌站 6 樓</span>
+    <h3>不吃辣的首選：北海道迴轉壽司</h3>
+    <div class="info-grid">
+      <div><b>約 ¥2,000–3,500</b><span>依食量而定</span></div>
+      <div><b>車站內</b><span>幾乎不用走戶外</span></div>
+      <div><b>40–90 分</b><span>可能久候</span></div>
+    </div>
+    <div class="reason">推薦原因：就在札幌站商場內，座位與動線對長輩比較友善，海鮮接受度也高。</div>
+    <div class="backup"><b>備案：</b>先抽號碼牌再逛同樓層；若預估超過集合時間，直接放棄，不要為名店冒險遲到。</div>
+    <a class="map" href="https://www.google.com/maps/search/?api=1&query=Nemuro+Hanamaru+JR+Tower+Stellar+Place" target="_blank">開啟 Google 地圖 ↗</a>
   </div>
-  <p>北海道代表料理，店內煙味較重；不習慣羊味的人可改選湯咖哩或壽司。</p>
-  <span class="map">開啟地圖搜尋</span>
-</a>
+</article>
 
-<a class="food-card" href="https://www.google.com/maps/search/?api=1&query=Ebisoba+Ichigen+Sapporo" target="_blank" rel="noopener">
-  <div class="food-top"><span class="city">📍 札幌</span><span class="arrow">↗</span></div>
-  <span class="eat-day">DAY 3／4 晚餐</span>
-  <h3>えびそば一幻</h3>
-  <p class="order"><b>推薦：</b>濃厚蝦味拉麵</p>
-  <div class="food-meta">
-    <div><b>¥1,000–1,500</b><span>大約價格</span></div>
-    <div><b>15–45 分</b><span>熱門時段</span></div>
-    <div><b>★★★★☆</b><span>推薦程度</span></div>
+<article class="media-card">
+  <div class="media-img"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Jingisukan%20lamb%20barbecue.jpg" alt="成吉思汗烤羊肉" onerror="this.parentElement.innerHTML='🐑'"></div>
+  <div class="media-body">
+    <div class="media-top"><span class="place-badge">📍 成吉思汗 だるま</span><span class="status-open">晚間營業</span></div>
+    <span class="day-badge">DAY 3｜薄野周邊</span>
+    <h3>想吃北海道特色羊肉再選</h3>
+    <div class="info-grid">
+      <div><b>約 ¥2,500–4,000</b><span>餐點價格</span></div>
+      <div><b>約 5–12 分</b><span>薄野步行</span></div>
+      <div><b>30–60 分</b><span>熱門時等候</span></div>
+    </div>
+    <div class="reason">推薦原因：北海道代表料理，但只推薦給確定敢吃羊肉、能接受烤肉煙味的人。</div>
+    <div class="backup"><b>備案：</b>排隊過長或不吃羊，改湯咖哩；這間不是長輩的「保守安全牌」。</div>
+    <a class="map" href="https://www.google.com/maps/search/?api=1&query=Jingisukan+Daruma+Sapporo+Susukino" target="_blank">開啟 Google 地圖 ↗</a>
   </div>
-  <p>蝦味非常明顯，特色強；不喜歡海鮮味的人不一定適合。</p>
-  <span class="map">開啟地圖搜尋</span>
-</a>
+</article>
+</div>
 
-<a class="food-card" href="https://www.google.com/maps/search/?api=1&query=LeTAO+Main+Store+Otaru" target="_blank" rel="noopener">
-  <div class="food-top"><span class="city">📍 小樽</span><span class="arrow">↗</span></div>
-  <span class="eat-day">DAY 4 下午茶</span>
-  <h3>LeTAO 本店</h3>
-  <p class="order"><b>推薦：</b>雙層起司蛋糕、起司甜點</p>
-  <div class="food-meta">
-    <div><b>¥800–1,800</b><span>大約價格</span></div>
-    <div><b>15–40 分</b><span>熱門時段</span></div>
-    <div><b>★★★★★</b><span>推薦程度</span></div>
-  </div>
-  <p>小樽代表甜點。建議兩人分食，才有空間再吃魚板或其他點心。</p>
-  <span class="map">開啟地圖搜尋</span>
-</a>
+<h3 style="font-size:28px;margin-top:42px">DAY 4｜小樽午餐、點心</h3>
+<div class="walk-route"><span>小樽運河</span><i>→</i><span>かま栄</span><i>→</i><span>北一硝子</span><i>→</i><span>LeTAO／音樂盒堂</span></div>
+<div class="notice"><b>最省力順序：</b>沿著堺町通一路走，不要為了名店來回折返。先看集合地點位於運河端還是音樂盒堂端，再決定順序。</div>
 
-<a class="food-card" href="https://www.google.com/maps/search/?api=1&query=Kamaei+Otaru" target="_blank" rel="noopener">
-  <div class="food-top"><span class="city">📍 小樽</span><span class="arrow">↗</span></div>
-  <span class="eat-day">DAY 4 散步小吃</span>
-  <h3>かま栄</h3>
-  <p class="order"><b>推薦：</b>現炸魚板、麵包捲魚板</p>
-  <div class="food-meta">
-    <div><b>¥300–1,000</b><span>大約價格</span></div>
-    <div><b>5–20 分</b><span>熱門時段</span></div>
-    <div><b>★★★★★</b><span>推薦程度</span></div>
+<div class="food-grid" style="margin-top:16px">
+<article class="media-card">
+  <div class="media-img contain"><img src="https://www.letao.jp/client_info/LETAO/itemimage/F011/F011_main02.jpg" alt="LeTAO 雙層起司蛋糕"></div>
+  <div class="media-body">
+    <div class="media-top"><span class="place-badge">📍 LeTAO 本店</span><span class="status-open">週三 9:00–18:00</span></div>
+    <span class="day-badge">DAY 4 下午茶｜音樂盒堂對面</span>
+    <h3>雙層起司蛋糕</h3>
+    <div class="info-grid">
+      <div><b>約 ¥1,000–2,000</b><span>咖啡甜點</span></div>
+      <div><b>就在堺町通</b><span>幾乎不繞路</span></div>
+      <div><b>15–45 分</b><span>咖啡廳等候</span></div>
+    </div>
+    <div class="reason">推薦原因：位置就在行程核心區，產品照片也最容易辨認，是長輩最不容易走錯的選擇。</div>
+    <div class="backup"><b>備案：</b>二樓咖啡廳若排隊，直接在一樓買外帶甜點，不要浪費自由時間。</div>
+    <a class="map" href="https://www.google.com/maps/search/?api=1&query=LeTAO+Main+Store+Otaru" target="_blank">開啟 Google 地圖 ↗</a>
   </div>
-  <p>適合邊走邊吃，現炸最有特色；需冷藏的伴手禮不要太早大量購買。</p>
-  <span class="map">開啟地圖搜尋</span>
-</a>
+</article>
 
-<a class="food-card" href="https://www.google.com/maps/search/?api=1&query=Otaru+Masazushi" target="_blank" rel="noopener">
-  <div class="food-top"><span class="city">📍 小樽</span><span class="arrow">↗</span></div>
-  <span class="eat-day">DAY 4 午餐</span>
-  <h3>おたる政寿司</h3>
-  <p class="order"><b>推薦：</b>握壽司、海鮮套餐</p>
-  <div class="food-meta">
-    <div><b>¥3,000–8,000</b><span>大約價格</span></div>
-    <div><b>30–60 分</b><span>熱門時段</span></div>
-    <div><b>★★★★☆</b><span>推薦程度</span></div>
+<article class="media-card">
+  <div class="media-img contain"><img src="https://kitaichiglass.co.jp/wp-content/uploads/2025/09/16da6da65229c6dfcd3f3788e3f9311e.jpg" alt="北一特製皇家奶茶"></div>
+  <div class="media-body">
+    <div class="media-top"><span class="place-badge">📍 北一 Hall</span><span class="status-open">週三可喝飲料甜點</span></div>
+    <span class="day-badge">DAY 4 休息｜北一硝子三號館</span>
+    <h3>煤油燈空間＋皇家奶茶</h3>
+    <div class="info-grid">
+      <div><b>皇家奶茶 ¥780</b><span>官方目前價格</span></div>
+      <div><b>就在堺町通</b><span>不必額外繞路</span></div>
+      <div><b>15–40 分</b><span>入場與點餐</span></div>
+    </div>
+    <div class="reason">推薦原因：不是為了吃正餐，而是讓爸媽坐下休息、看 167 盞煤油燈的氣氛。</div>
+    <div class="backup"><b>重要：</b>2026/12/2 是星期三，官方資料顯示「正餐只在四、六、日供應」，所以星期三只建議喝飲料或吃甜點。</div>
+    <a class="map" href="https://www.google.com/maps/search/?api=1&query=Kitaichi+Hall+Otaru" target="_blank">開啟 Google 地圖 ↗</a>
   </div>
-  <p>想坐下慢慢吃壽司可以選，但價格較高、用餐時間也較久。</p>
-  <span class="map">開啟地圖搜尋</span>
-</a>
+</article>
 
-<a class="food-card" href="https://www.google.com/maps/search/?api=1&query=Kitaichi+Hall+Otaru" target="_blank" rel="noopener">
-  <div class="food-top"><span class="city">📍 小樽</span><span class="arrow">↗</span></div>
-  <span class="eat-day">DAY 4 下午</span>
-  <h3>北一ホール</h3>
-  <p class="order"><b>推薦：</b>咖啡、甜點</p>
-  <div class="food-meta">
-    <div><b>¥800–1,500</b><span>大約價格</span></div>
-    <div><b>15–40 分</b><span>熱門時段</span></div>
-    <div><b>★★★★☆</b><span>推薦程度</span></div>
+<article class="media-card">
+  <div class="media-img" style="background:linear-gradient(135deg,#f4c77f,#a14a2a);display:grid;place-items:center;font-size:90px">🍥</div>
+  <div class="media-body">
+    <div class="media-top"><span class="place-badge">📍 かま栄 工場直賣店</span><span class="status-open">行程途中可買</span></div>
+    <span class="day-badge">DAY 4 散步小吃｜運河與堺町通之間</span>
+    <h3>現炸麵包捲魚板</h3>
+    <div class="info-grid">
+      <div><b>約 ¥300–1,000</b><span>小吃價格</span></div>
+      <div><b>順路停留</b><span>不用特地找餐廳</span></div>
+      <div><b>5–20 分</b><span>購買時間</span></div>
+    </div>
+    <div class="reason">推薦原因：比坐下吃一整餐省時間，現炸產品有清楚展示，長輩可以直接指著買。</div>
+    <div class="backup"><b>備案：</b>若午餐已吃很飽，就買一份兩人分食；冷藏魚板不要太早大量購買。</div>
+    <a class="map" href="https://www.google.com/maps/search/?api=1&query=Kamaei+Factory+Direct+Sales+Store+Otaru" target="_blank">開啟 Google 地圖 ↗</a>
   </div>
-  <p>重點是煤油燈氣氛，不只是餐點；排隊太長時可先逛北一硝子。</p>
-  <span class="map">開啟地圖搜尋</span>
-</a></div><div class="notice" style="margin-top:18px"><b>團餐評價限制：</b>旅行社目前沒有公布 Day 2 壽喜燒與 Day 3 日式套餐的餐廳名稱，因此無法可靠列出這兩間餐廳的個別評價。拿到行前說明會資料後再查會最準。</div>
+</article>
+
+<article class="media-card">
+  <div class="media-img" style="background:linear-gradient(135deg,#e4a95b,#7c331f);display:grid;place-items:center;font-size:90px">🍗</div>
+  <div class="media-body">
+    <div class="media-top"><span class="place-badge">📍 若鶏時代 なると 本店</span><span class="status-open">先看集合時間</span></div>
+    <span class="day-badge">DAY 4 正餐備案｜小樽市中心</span>
+    <h3>炸半雞</h3>
+    <div class="info-grid">
+      <div><b>約 ¥1,500–2,500</b><span>餐點價格</span></div>
+      <div><b>可能需繞路</b><span>非堺町通核心</span></div>
+      <div><b>45–75 分</b><span>用餐總時間</span></div>
+    </div>
+    <div class="reason">推薦原因：很有地方特色，但只有在自由時間充足、集合點接近小樽站方向時才建議。</div>
+    <div class="backup"><b>不建議硬去：</b>若集合點在音樂盒堂或時間不足，直接吃堺町通沿線的小吃、壽司或甜點。</div>
+    <a class="map" href="https://www.google.com/maps/search/?api=1&query=Naruto+Main+Store+Otaru" target="_blank">開啟 Google 地圖 ↗</a>
+  </div>
+</article>
+</div>
 </div></section>
 
 
 <section id="souvenirs"><div class="container">
-<div class="head"><div class="eyebrow">SOUVENIRS</div><h2>北海道必買伴手禮</h2>
-<p class="lead">不用每樣都買。下面依「好帶、代表性、長輩接受度」整理，最後一天或機場再補買最省事。</p></div>
-<div class="souvenir-grid">
-  <article class="souvenir"><div class="souvenir-icon">🧀</div><h3>LeTAO</h3><div class="priority">★★★★★ 小樽代表</div><p>雙層起司蛋糕最有名，但需要冷藏；常溫餅乾比較容易帶回台灣。</p><span class="buy">建議：DAY 4 小樽</span></article>
-  <article class="souvenir"><div class="souvenir-icon">🍪</div><h3>白色戀人</h3><div class="priority">★★★★★ 最穩選擇</div><p>辨識度高、常溫好攜帶，適合送親友或同事，不太容易踩雷。</p><span class="buy">建議：Outlet／機場</span></article>
-  <article class="souvenir"><div class="souvenir-icon">🍫</div><h3>ROYCE'</h3><div class="priority">★★★★★ 巧克力</div><p>生巧克力需冷藏，洋芋片巧克力也很熱門；回程前再買較安心。</p><span class="buy">建議：新千歲機場</span></article>
-  <article class="souvenir"><div class="souvenir-icon">🌸</div><h3>六花亭</h3><div class="priority">★★★★☆ 北海道經典</div><p>奶油葡萄夾心餅乾最具代表性，口感偏甜，適合搭咖啡或茶。</p><span class="buy">建議：札幌／機場</span></article>
-  <article class="souvenir"><div class="souvenir-icon">🍰</div><h3>北菓樓</h3><div class="priority">★★★★☆ 甜點類</div><p>年輪蛋糕、泡芙與米果都有人氣；年輪蛋糕較適合帶回家分享。</p><span class="buy">建議：小樽／札幌</span></article>
-  <article class="souvenir"><div class="souvenir-icon">🥔</div><h3>薯條三兄弟</h3><div class="priority">★★★★☆ 好攜帶</div><p>鹹香、獨立包裝，適合多人分送；熱門時可能限購或缺貨。</p><span class="buy">建議：機場最後補買</span></article>
+<div class="head"><div class="eyebrow">SOUVENIR PHOTO GUIDE</div><h2>伴手禮圖鑑：照著包裝找</h2>
+<p class="lead">下面用實際商品外觀做辨認。爸媽到店裡不需要看懂日文，直接對照照片與包裝顏色即可。價格與包裝可能調整，請以現場為準。</p></div>
+
+<div class="product-grid">
+<article class="product-card">
+  <div class="product-photo"><img src="https://www.letao.jp/client_info/LETAO/itemimage/F011/F011_main02.jpg" alt="LeTAO 雙層起司蛋糕"></div>
+  <div class="product-body"><div class="product-label">小樽代表・冷藏／冷凍</div><h3>LeTAO 雙層起司蛋糕</h3>
+    <div class="product-meta"><span>約 ¥1,800 起</span><span>DAY 4 小樽</span><span>需保冷</span></div>
+    <div class="recognition">辨認方式：淡黃色圓形蛋糕，切開後明顯有上下兩層起司。</div>
+    <p class="product-tip">要帶回台灣先問店員保存方式；怕麻煩可改買 LeTAO 常溫餅乾。</p>
+  </div>
+</article>
+
+<article class="product-card">
+  <div class="product-photo"><img src="https://shop.ishiya.co.jp/cdn/shop/files/18_800x.jpg?v=1711930730" alt="白色戀人 18枚入"></div>
+  <div class="product-body"><div class="product-label">最穩的送禮選擇</div><h3>白色戀人</h3>
+    <div class="product-meta"><span>18 枚約 ¥1,717</span><span>機場好買</span><span>常溫較方便</span></div>
+    <div class="recognition">辨認方式：白藍色盒子、雪山與雪花圖案，包裝上會看到「白い恋人」。</div>
+    <p class="product-tip">最適合送親友、同事；不確定買什麼時，選這個最安全。</p>
+  </div>
+</article>
+
+<article class="product-card">
+  <div class="product-photo"><img src="https://www.royce.com/images/pc/goods/goods_top_main.jpg" alt="ROYCE 生巧克力 OLE"></div>
+  <div class="product-body"><div class="product-label">人氣生巧克力・需冷藏</div><h3>ROYCE' 生巧克力［O'LE／オーレ］</h3>
+    <div class="product-meta"><span>目前 ¥1,215</span><span>新千歲機場</span><span>冷藏 10°C 以下</span></div>
+    <div class="recognition">辨認方式：深藍色方盒，中央有金色框，內容物是撒可可粉的方形生巧克力。</div>
+    <p class="product-tip">官方標示含微量洋酒；建議回程前在機場買，減少保冷時間。</p>
+  </div>
+</article>
+
+<article class="product-card">
+  <div class="product-photo"><img src="https://items.customlife.co.jp/wp-content/uploads/2024/10/hokkaido-souvenir-main.jpg" alt="六花亭與北海道伴手禮" onerror="this.src='https://www.tanukiya.co.jp/images/rokkatei.jpg'"></div>
+  <div class="product-body"><div class="product-label">六花亭經典</div><h3>マルセイバターサンド</h3>
+    <div class="product-meta"><span>5 個約 ¥870</span><span>狸小路／機場</span><span>保存期較短</span></div>
+    <div class="recognition">辨認方式：米白色包裝，中央是紅色復古標籤，單顆通常用銀色小包裝。</div>
+    <p class="product-tip">奶油葡萄乾夾心，怕葡萄乾的人可能不喜歡；買前先確認保存期限。</p>
+  </div>
+</article>
+
+<article class="product-card">
+  <div class="product-photo"><img src="https://items.customlife.co.jp/wp-content/uploads/2024/10/hokkaido-souvenir-main.jpg" alt="北菓樓北海道伴手禮"></div>
+  <div class="product-body"><div class="product-label">適合全家分享</div><h3>北菓樓 年輪蛋糕「妖精の森」</h3>
+    <div class="product-meta"><span>價格依尺寸</span><span>小樽／札幌</span><span>常溫較好帶</span></div>
+    <div class="recognition">辨認方式：找「北菓楼」字樣與圓形年輪蛋糕照片；常見外盒偏米色、棕色。</div>
+    <p class="product-tip">比泡芙更適合帶回台灣，切片後多人分享也方便。</p>
+  </div>
+</article>
+
+<article class="product-card">
+  <div class="product-photo"><img src="https://items.customlife.co.jp/wp-content/uploads/2024/10/hokkaido-souvenir-main.jpg" alt="薯條三兄弟包裝"></div>
+  <div class="product-body"><div class="product-label">鹹食伴手禮</div><h3>じゃがポックル（薯條三兄弟）</h3>
+    <div class="product-meta"><span>約 ¥1,000 左右</span><span>新千歲機場</span><span>獨立小包</span></div>
+    <div class="recognition">辨認方式：米白色盒子、紅色「じゃがポックル」字樣，盒面畫三根馬鈴薯條小人。</div>
+    <p class="product-tip">適合分送、不怕冷藏問題；熱門時可能缺貨，看到可先買一盒。</p>
+  </div>
+</article>
 </div>
-<div class="notice"><b>冷藏品提醒：</b>LeTAO 起司蛋糕、ROYCE' 生巧克力等需要留意保冷與航空托運時間。旅行社或店家若提供保冷袋，可依回程時間評估再購買。</div>
+
+<div class="notice"><b>購買順序：</b>小樽先買 LeTAO 與當地限定品；白色戀人、ROYCE'、薯條三兄弟等大量通路商品，留到新千歲機場再補買，減少一路提著走。</div>
+<p class="source-note">產品照片取自品牌官方網站或商品介紹頁；實際外盒、價格與容量可能於 2026 年底前調整。</p>
 </div></section>
 
 <section id="tips"><div class="container">
@@ -344,5 +471,5 @@ footer{padding:34px 0 75px;color:var(--muted);text-align:center}
 </div></section>
 <section><div class="container"><div class="notice"><b>整體結論：</b>這團最大的優點不是塞最多景點，而是住宿連住、第一天較輕鬆、小樽保留自由時間。對第一次去北海道、希望行程舒服的旅客來說，安排相當均衡。</div></div></section>
 </main>
-<footer><div class="container">北海道五日旅行指南 V4｜內容依雄獅產品 26JHN29JXB-T 整理</div></footer>
+<footer><div class="container">北海道五日旅行指南 V5｜內容依雄獅產品 26JHN29JXB-T 與店家官方營業資料整理</div></footer>
 </body></html>
